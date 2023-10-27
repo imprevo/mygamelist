@@ -1,0 +1,33 @@
+---
+import { Game } from '../models/game';
+
+export interface Props {
+  games: Game[];
+}
+
+const { games } = Astro.props;
+---
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>name</th>
+    <th>platforms</th>
+    <th>status</th>
+  </tr>
+  {
+    games.map((game, index) => (
+      <tr>
+        <td>{index + 1}</td>
+        <td>
+          <a href={`/games/${game.id}`}>{game.name}</a>
+        </td>
+        <td>{game.genres.join(', ')}</td>
+        <td>{game.platforms.join(', ')}</td>
+        <td>{game.status}</td>
+      </tr>
+    ))
+  }
+</table>
+
+<style></style>

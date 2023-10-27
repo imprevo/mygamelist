@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GameList from '../../components/GameList.astro';
+import { getGameList } from '../../services/games';
+
+const games = getGameList();
+---
+
+<Layout title="My Game List">
+  <main>
+    <h1>My Game List</h1>
+    <GameList games={games} />
+  </main>
+</Layout>

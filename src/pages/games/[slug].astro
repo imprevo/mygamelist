@@ -1,0 +1,25 @@
+---
+import { getGameList } from '../../services/games';
+import Layout from '../../layouts/Layout.astro';
+import { Game } from '../../models/game';
+
+export function getStaticPaths() {
+  const games = getGameList();
+  return games.map((game) => ({
+    params: { slug: game.id },
+    props: { game },
+  }));
+}
+
+export interface Props {
+  game: Game;
+}
+
+const { game } = Astro.props;
+---
+
+<Layout title={game.name}>
+  <main>
+    <h1>{game.name}</h1>
+  </main>
+</Layout>

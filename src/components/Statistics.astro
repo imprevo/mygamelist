@@ -1,0 +1,33 @@
+---
+import { Statistics } from '../models/statistics';
+
+export interface Props {
+  statistics: Statistics;
+}
+
+const { statistics } = Astro.props;
+---
+
+<table>
+  <tr>
+    <td>Total:</td>
+    <td>{statistics.total}</td>
+  </tr>
+  <tr>
+    <td>Completed:</td>
+    <td>{statistics.completed}</td>
+  </tr>
+</table>
+
+<table>
+  {
+    statistics.platforms.map((platform) => (
+      <tr>
+        <td>{platform.name}:</td>
+        <td>{platform.total}</td>
+      </tr>
+    ))
+  }
+</table>
+
+<style></style>
