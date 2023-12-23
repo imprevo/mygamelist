@@ -1,8 +1,13 @@
 export interface Game {
   id: string;
   name: string;
-  platforms: string[];
   genres: string[];
-  status: 'played' | 'completed';
   isFavorite?: boolean;
+  editions: GameEdition[];
+}
+
+export interface GameEdition {
+  name?: string;
+  platform: string;
+  isCompleted: boolean;
 }
