@@ -2,9 +2,9 @@ export interface Game {
   id: string;
   name: string;
   genres: string[];
+  cover?: string;
   isFavorite?: boolean;
   editions: GameEdition[];
-  cover?: string;
 }
 
 export interface GameEdition {

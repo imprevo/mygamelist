@@ -1,6 +1,6 @@
 ---
 import type { Game } from '../models/game';
-import { getPlatforms, isGameCompleted } from '../utils/game';
+import GameCard from './GameCard.astro';
 
 export interface Props {
   games: Game[];
@@ -9,27 +9,14 @@ export interface Props {
 const { games } = Astro.props;
 ---
 
-<table>
-  <tr>
-    <th>#</th>
-    <th>Name</th>
-    <th>Genres</th>
-    <th>Platforms</th>
-    <th>Status</th>
-  </tr>
-  {
-    games.map((game, index) => (
-      <tr>
-        <td>{index + 1}</td>
-        <td>
-          <a href={`/games/${game.id}`}>{game.name}</a>
-        </td>
-        <td>{game.genres.join(', ')}</td>
-        <td>{getPlatforms(game).join(', ')}</td>
-        <td>{isGameCompleted(game) ? 'Completed' : 'Played'}</td>
-      </tr>
-    ))
-  }
-</table>
+<div class="game-list">
+  {games.map((game) => <GameCard game={game} />)}
+</div>
 
-<style></style>
+<style>
+  .game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+</style>
