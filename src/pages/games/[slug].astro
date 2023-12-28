@@ -1,7 +1,8 @@
 ---
 import { getGameList } from '../../services/games';
 import Layout from '../../layouts/Layout.astro';
-import { Game } from '../../models/game';
+import type { Game } from '../../models/game';
+import GameEditions from '../../components/GameEditions.astro';
 
 export function getStaticPaths() {
   const games = getGameList();
@@ -21,5 +22,6 @@ const { game } = Astro.props;
 <Layout title={game.name}>
   <main>
     <h1>{game.name}</h1>
+    <GameEditions game={game} />
   </main>
 </Layout>

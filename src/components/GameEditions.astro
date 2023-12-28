@@ -1,0 +1,31 @@
+---
+import type { Game } from '../models/game';
+import { isGameCompleted } from '../utils/game';
+
+export interface Props {
+  game: Game;
+}
+
+const { game } = Astro.props;
+---
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Platform</th>
+    <th>Status</th>
+  </tr>
+  {
+    game.editions.map((edition, index) => (
+      <tr>
+        <td>{index + 1}</td>
+        <td>{edition.name ?? 'Default'}</td>
+        <td>{edition.platform}</td>
+        <td>{isGameCompleted(game) ? 'Completed' : 'Played'}</td>
+      </tr>
+    ))
+  }
+</table>
+
+<style></style>
