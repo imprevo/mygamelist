@@ -4,6 +4,7 @@ export interface Game {
   genres: string[];
   isFavorite?: boolean;
   editions: GameEdition[];
+  cover?: string;
 }
 
 export interface GameEdition {

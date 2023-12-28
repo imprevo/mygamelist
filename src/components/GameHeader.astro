@@ -1,0 +1,23 @@
+---
+import type { Game } from '../models/game';
+
+export interface Props {
+  game: Game;
+}
+
+const { game } = Astro.props;
+---
+
+<h1>{game.name}</h1>
+
+{
+  game.cover && (
+    <p>
+      <img src={game.cover} alt="cover" />
+    </p>
+  )
+}
+
+<p><b>Genres:</b> {game.genres.join(', ')}</p>
+
+<style></style>

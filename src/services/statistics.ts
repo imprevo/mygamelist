@@ -1,4 +1,4 @@
-import { PlatformStatistics, Statistics } from '../models/statistics';
+import type { PlatformStatistics, Statistics } from '../models/statistics';
 import { isGameCompleted } from '../utils/game';
 import { getGameList } from './games';
 

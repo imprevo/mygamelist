@@ -1,4 +1,4 @@
-import { Game } from '../models/game';
+import type { Game } from '../models/game';
 
 export function isGameCompleted(game: Game) {
   return game.editions.some((edition) => edition.isCompleted);

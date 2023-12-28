@@ -1,4 +1,4 @@
-import { Game } from '../models/game';
+import type { Game } from '../models/game';
 
 const data: Game[] = [
   {
@@ -17,7 +17,7 @@ const data: Game[] = [
   {
     id: 'nier-automata',
     name: 'NieR: Automata',
-    genres: ["Role-playing (RPG)', 'Hack and slash/Beat 'em up"],
+    genres: ['Role-playing (RPG)', "Hack and slash/Beat 'em up"],
     editions: [{ platform: 'PC', isCompleted: true }],
   },
   {
@@ -66,13 +66,13 @@ const data: Game[] = [
   {
     id: 'devil-may-cry-3',
     name: "Devil May Cry 3: Dante's Awakening",
-    genres: ["Shooter', 'Hack and slash/Beat 'em up', 'Adventure"],
+    genres: ['Shooter', "Hack and slash/Beat 'em up", 'Adventure'],
     editions: [{ name: 'Special Edition', platform: 'PC', isCompleted: true }],
   },
   {
     id: 'devil-may-cry-4',
     name: 'Devil May Cry 4',
-    genres: ["Hack and slash/Beat 'em up', 'Adventure"],
+    genres: ["Hack and slash/Beat 'em up", 'Adventure'],
     isFavorite: true,
     editions: [
       { platform: 'PC', isCompleted: true },
@@ -83,17 +83,18 @@ const data: Game[] = [
         isCompleted: true,
       },
     ],
+    cover: 'https://images.igdb.com/igdb/image/upload/t_cover_med/co1u6n.jpg',
   },
   {
     id: 'devil-may-cry-5',
     name: 'Devil May Cry 5',
-    genres: ["Hack and slash/Beat 'em up', 'Adventure"],
+    genres: ["Hack and slash/Beat 'em up", 'Adventure'],
     editions: [{ platform: 'PlayStation 4', isCompleted: true }],
   },
   {
     id: 'dmc-devil-may-cry',
     name: 'DmC: Devil May Cry',
-    genres: ["Hack and slash/Beat 'em up', 'Adventure"],
+    genres: ["Hack and slash/Beat 'em up", 'Adventure'],
     editions: [{ platform: 'PC', isCompleted: true }],
   },
   {
@@ -119,7 +120,7 @@ const data: Game[] = [
   {
     id: 'metal-gear-rising-revengeance',
     name: 'Metal Gear Rising: Revengeance',
-    genres: ["Shooter', 'Strategy', 'Hack and slash/Beat 'em up', 'Adventure"],
+    genres: ['Shooter', 'Strategy', "Hack and slash/Beat 'em up", 'Adventure'],
     isFavorite: true,
     editions: [{ platform: 'PC', isCompleted: true }],
   },
